@@ -3,11 +3,11 @@ import { SideNavigation, Header } from "./components";
 
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <div>
+    <div className="dsbLayout">
       <Header />
-      <main>
-        <SideNavigation />
-        <div>{children}</div>
+      <main className="dsbLayout__main">
+        <SideNavigation className="dsbLayout__sideBar" />
+        <div className="dsbLayout__content">{children}</div>
       </main>
     </div>
   );

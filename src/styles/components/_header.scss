@@ -1,0 +1,39 @@
+.mainHeader {
+  background-color: $white;
+  border-bottom: 1px solid $cloud-grey;
+}
+
+.mainHeader__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 36px;
+}
+
+.mainHeader__right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  & > button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background-color: transparent;
+    border: 1px solid transparent;
+  }
+}
+
+.mainHeader__profileInitials {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $green;
+  color: $white;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+}

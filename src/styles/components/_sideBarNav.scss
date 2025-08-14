@@ -1,0 +1,43 @@
+.sideBar__nav {
+  background-color: $white;
+  border-right: 1px solid $cloud-grey;
+}
+
+.sideBar__nav > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 32px;
+}
+
+.sideBar__nav > ul > li {
+  display: flex;
+  flex-direction: column;
+}
+
+.sideBar__nav > ul > li > a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 32px;
+  transition: background-color, color ease-out 250ms;
+
+  &.active-menu,
+  &:hover {
+    background-color: $blue;
+
+    & > svg > path {
+      stroke: $white;
+    }
+
+    & > span {
+      color: $white;
+    }
+  }
+
+  & > span {
+    font-size: 15px;
+    font-weight: 300;
+    text-transform: capitalize;
+  }
+}

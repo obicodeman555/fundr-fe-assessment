@@ -1,14 +1,30 @@
+"use client";
 import Link from "next/link";
+import { dsbMenuData } from "@/app/utils";
+import { usePathname } from "next/navigation";
 
-export const SideNavigation = () => {
+export const SideNavigation = ({ className }: { className: string }) => {
+  const pathname = usePathname();
+
   return (
-    <nav>
-      <Link href={"/dashboard/get-started"}>Get Started</Link>
-      <Link href={"/dashboard"}>Dashboard</Link>
-      <Link href={"/dashboard/accounts"}>Accounts</Link>
-      <Link href={"/dashboard/transfers"}>Transfers</Link>
-      <Link href={"/dashboard/transactions"}>Transactions</Link>
-      <Link href={"/dashboard/settings"}>Transactions</Link>
+    <nav className={`${className} sideBar__nav`}>
+      <ul>
+        {dsbMenuData.map((menuItem) => {
+          const MenuIcon = menuItem.linkIcon;
+          const isActive = pathname === menuItem.href;
+          return (
+            <li key={menuItem.id}>
+              <Link
+                href={menuItem.href}
+                className={isActive ? "active-menu" : ""}
+              >
+                <MenuIcon />
+                <span>{menuItem.name}</span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </nav>
   );
 };

@@ -1,0 +1,12 @@
+.dsbLayout__main {
+  display: flex;
+  height: 100vh;
+}
+
+.dsbLayout__sideBar {
+  flex-basis: 270px;
+}
+
+.dsbLayout__content {
+  flex: 1;
+}
